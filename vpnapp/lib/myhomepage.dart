@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vpnapp/selectlocation.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -37,7 +38,22 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("Connected")],),) ,) ,),
 
             SizedBox(height: 30,),
-            // Button for Selecting location
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+              onPressed:
+             (){
+Navigator.push(context, MaterialPageRoute(builder: (context){
+  return SelectLocationPage();
+}));
+              
+            },
+             child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text("Select Different location" , style: TextStyle(color: Color.fromARGB(255, 95, 15, 161)),),
+                Icon(Icons.navigate_next)
+              ],
+             ) )
         ],)
       )
     
